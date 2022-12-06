@@ -11,6 +11,13 @@ public class Temperature {
     public void setFahrenheit(double aFahrenheit) {
 
         double absoluteZeroFahrenheit = -459.67;
+
+                if (aFahrenheit < absoluteZeroFahrenheit) {
+        try{
+            throw new TemperatureException("That temp is too low!");
+        } catch (TemperatureException e){
+                e.printStackTrace();
+            }
         }
 
         fahrenheit = aFahrenheit;
